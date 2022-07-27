@@ -6,7 +6,7 @@ use App\Models\CampBenefit;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CampBenefitSeeder extends Seeder
+class CampBenefitTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -59,6 +59,12 @@ class CampBenefitSeeder extends Seeder
                 'updated_at' => date('Y-m-d H:i:s', time()),
             ],
             [
+                'camp_id' => 1,
+                'name' => 'Website Builder',
+                'created_at' => date('Y-m-d H:i:s', time()),
+                'updated_at' => date('Y-m-d H:i:s', time()),
+            ],
+            [
                 'camp_id' => 2,
                 'name' => '1-1 Mentoring Program',
                 'created_at' => date('Y-m-d H:i:s', time()),
@@ -67,12 +73,6 @@ class CampBenefitSeeder extends Seeder
             [
                 'camp_id' => 2,
                 'name' => 'Final Project Certificate',
-                'created_at' => date('Y-m-d H:i:s', time()),
-                'updated_at' => date('Y-m-d H:i:s', time()),
-            ],
-            [
-                'camp_id' => 2,
-                'name' => 'Offline Course Videos',
                 'created_at' => date('Y-m-d H:i:s', time()),
                 'updated_at' => date('Y-m-d H:i:s', time()),
             ],

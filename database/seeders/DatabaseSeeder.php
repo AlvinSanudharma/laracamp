@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CampBenefit;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,8 +24,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CampTableSeeder::class,
-            CampBenefitSeeder::class,
-            AdminUserSeeder::class
+            CampBenefitTableSeeder::class,
+            AdminUserTableSeeder::class
         ]);
     }
 }
