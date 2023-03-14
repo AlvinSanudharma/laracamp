@@ -19,11 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
 Route::get('checkout/{camp:slug}', [CheckoutController::class, 'create'])->name('checkout.create');
-
-Route::get('success-checkout', function () {
-    return view('success-checkout');
-})->name('success-checkout');
+Route::post('checkout/{camp}', [CheckoutController::class, 'store'])->name('checkout.store');
 
 // NOTE: Socialite Routes
 Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
