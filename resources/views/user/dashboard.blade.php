@@ -26,14 +26,18 @@
                                 <strong>{{ $checkout->Camp->title }}</strong>
                             </p>
                             <p>
-                                September 24, 2021
+                                {{ $checkout->created_at->format('M d, Y') }}
                             </p>
                         </td>
                         <td>
-                            <strong>$280,000</strong>
+                            <strong>${{ $checkout->Camp->price }}</strong>
                         </td>
                         <td>
-                            <strong>Waiting for Payment</strong>
+                            @if ($checkout->is_paid)
+                                <strong class="text-success">Payment Success</strong>
+                            @else
+                                <strong>Waiting for Payment</strong>
+                            @endif
                         </td>
                         <td>
                             <a href="#" class="btn btn-primary">
