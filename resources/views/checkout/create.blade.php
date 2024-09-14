@@ -33,7 +33,10 @@
                             @csrf
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Full Name</label>
-                                <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ Auth::user()->name }}">
+                                <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ Auth::user()->name }}">
+                                @if ($errors->has('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
