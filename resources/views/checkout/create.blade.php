@@ -40,15 +40,24 @@
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ Auth::user()->email }}">
+                                <input type="email" name="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ Auth::user()->email }}">
+                                @if ($errors->has('email'))
+                                    <p class="text-danger">{{ $errors->first('email') }}</p>
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Occupation</label>
-                                <input type="text" name="occupation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" name="occupation" class="form-control {{ $errors->has('occupation') ? 'is-invalid' : '' }}" value="{{old('occupation') ?: Auth::user()->occupation }}">
+                                @if ($errors->has('occupation'))
+                                    <p class="text-danger">{{ $errors->first('occupation') }}</p>
+                                @endif
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Card Number</label>
-                                <input type="number" name="card_number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="number" name="card_number" class="form-control {{ $errors->has('card_number') ? 'is-invalid' : '' }}" value="{{ old('card_number') ?: '' }}">
+                                @if ($errors->has('card_number'))
+                                    <p class="text-danger">{{ $errors->first('card_number') }}</p>
+                                @endif
                             </div>
                             <div class="mb-5">
                                 <div class="row">
