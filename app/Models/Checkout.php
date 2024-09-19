@@ -28,12 +28,7 @@ class Checkout extends Model
         );
     }
     
-    /**
-     * Get the Camp that owns the Checkout
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function Camp(): BelongsTo
+    public function Camp()
     {
         return $this->belongsTo(Camp::class);
     }

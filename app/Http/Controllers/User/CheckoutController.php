@@ -123,5 +123,9 @@ class CheckoutController extends Controller
     public function invoice(Checkout $checkout) 
     {
         // TODO: add view invoice feature
+        
+        return view('user.invoice', [
+            'checkout' => $checkout
+        ]);
     }
 }
