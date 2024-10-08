@@ -1,10 +1,12 @@
 <x-mail::message>
-# Introduction
+# Your Transaction Has Been Confirmed
 
-The body of your message.
+Hi {{ $checkout->User->name }}
+<br>
+Your transaction has been confirmed, now you can enjoy the benefits of <b>{{ $checkout->Camp->title }}</b> camp.
 
-<x-mail::button :url="''">
-Button Text
+<x-mail::button :url="route('user.dashboard')">
+My Dashboard
 </x-mail::button>
 
 Thanks,<br>
